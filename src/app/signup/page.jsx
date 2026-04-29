@@ -34,7 +34,7 @@ export default function SignUpPage() {
             image,
         })
 
-        console.log({ data, error })
+        // console.log({ data, error })
 
         if (!error) {
             toast.success("Account created successfully!", {
@@ -54,7 +54,7 @@ export default function SignUpPage() {
 
             setTimeout(() => {
                 router.push('/');
-            }, 100);
+            }, 30);
         }
         else {
             toast.error("Account is already created", {

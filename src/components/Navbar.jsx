@@ -4,10 +4,16 @@ import { useState } from "react";
 import Link from "next/link";
 import { HiOutlineMenuAlt3, HiOutlineX } from "react-icons/hi";
 import NavLinks from "./NavLinks";
+import { Button } from "@heroui/react";
+import { authClient } from "@/lib/auth-client";
 
 
 export default function Navbar() {
     const [open, setOpen] = useState(false);
+
+    const handleSignOut = async () => {
+        await authClient.signOut();
+    }
 
     return (
         <nav className="bg-[#F5F5DC] border-b border-[#e5e5d8] relative z-50">
@@ -49,6 +55,8 @@ export default function Navbar() {
                             SignUp
                         </button>
                     </Link>
+
+                    <Button onClick={handleSignOut} size="sm" variant="danger">SignOut</Button>
                 </div>
             </div>
 
