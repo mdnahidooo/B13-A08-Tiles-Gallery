@@ -38,11 +38,18 @@ export default function Navbar() {
                 </div>
 
                 {/* Right Button */}
-                <Link href={'/signup'}>
-                    <button className="px-4 py-2 text-sm bg-[#E07A5F] text-white rounded-md hover:opacity-90 transition">
-                    SignUp
-                    </button>
-                </Link>
+                <div className="flex gap-2">
+                    <Link href={'/signin'}>
+                        <button className="px-4 py-2 text-sm bg-[#E07A5F] text-white rounded-md hover:opacity-90 transition">
+                            SignIn
+                        </button>
+                    </Link>
+                    <Link href={'/signup'}>
+                        <button className="px-4 py-2 text-sm bg-[#E07A5F] text-white rounded-md hover:opacity-90 transition">
+                            SignUp
+                        </button>
+                    </Link>
+                </div>
             </div>
 
             {/* Left Slide Drawer */}
