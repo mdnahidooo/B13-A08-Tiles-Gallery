@@ -9,7 +9,7 @@ import {
 export default function Footer() {
     return (
         <footer className="w-full bg-[#3D2B1F] text-[#F5F5DC]">
-            <div className="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-3 gap-10">
+            <div className="max-w-7xl mx-auto px-6 py-25 grid grid-cols-1 md:grid-cols-3 gap-10">
 
                 {/* Brand Section */}
                 <div>

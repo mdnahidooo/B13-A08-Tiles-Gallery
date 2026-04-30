@@ -27,7 +27,7 @@ const TileCard = ({ tile }) => {
                     {tile.category} • ${tile.price}
                 </p>
 
-                <Link href={`/tile/${tile.id}`}>
+                <Link href={`/tiles/${tile.id}`}>
                     <Button size="sm" className="bg-[#E07A5F] text-white w-full">
                         View Details
                     </Button>

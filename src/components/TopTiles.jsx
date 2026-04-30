@@ -2,13 +2,15 @@ import TileCard from '@/components/TileCard';
 import getData from '@/lib/getData';
 import React from 'react';
 import MarqueeSection from './MarqueeSection';
+import { Button } from '@heroui/react';
+import Link from 'next/link';
 
 const TopTiles = async () => {
     const tiles = await getData();
     const featuredTiles = tiles.slice(0, 4);
     return (
         <div>
-            <section className="max-w-10/12 mx-auto px-6 pb-10">
+            <section className="max-w-10/12 mx-auto px-6 pb-30">
 
 
                 <div className="mb-10 text-center">

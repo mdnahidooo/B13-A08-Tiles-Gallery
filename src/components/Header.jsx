@@ -32,7 +32,7 @@ const Header = () => {
                 {/* Content */}
                 <div className="relative max-w-7xl mx-auto px-6 h-full flex items-center text-white">
 
-                    <div className="max-w-2xl">
+                    <div className="max-w-2xl pl-20">
 
                         {/* Brand */}
                         <h1 className="text-4xl md:text-6xl font-bold leading-tight animate__animated animate__fadeInDown">
@@ -43,7 +43,7 @@ const Header = () => {
                         </h1>
 
                         {/* Subtitle */}
-                        <p className="text-lg md:text-xl mt-4 mb-6 text-gray-200 animate__animated animate__fadeInUp animate__delay-1s">
+                        <p className="text-lg md:text-xl mt-4 mb-6 text-gray-300 animate__animated animate__fadeInUp animate__delay-1s">
                             Discover handcrafted tile designs that bring warmth, texture,
                             and timeless beauty to your spaces.
                         </p>

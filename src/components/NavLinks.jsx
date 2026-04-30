@@ -8,7 +8,7 @@ export default function NavLinks({ onClick }) {
 
     const navLinks = [
         { name: "Home", path: "/" },
-        { name: "All Tiles", path: "/all-tiles" },
+        { name: "All Tiles", path: "/tiles" },
         { name: "My Profile", path: "/my-profile" },
     ];
 
