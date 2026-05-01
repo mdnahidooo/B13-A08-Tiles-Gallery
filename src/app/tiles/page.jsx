@@ -25,18 +25,31 @@ const AllTilesPage = () => {
         fetchTiles();
     }, []);
 
-    // search logic (title + tags + category + style)
+    // // search logic (title + tags + category + style)
+    // const filteredTiles = useMemo(() => {
+    //     return tiles.filter((tile) => {
+    //         const query = search.toLowerCase();
+
+    //         return (
+    //             tile.title?.toLowerCase().includes(query) ||
+    //             tile.category?.toLowerCase().includes(query) ||
+    //             tile.style?.toLowerCase().includes(query) ||
+    //             tile.tags?.some((tag) =>
+    //                 tag.toLowerCase().includes(query)
+    //             )
+    //         );
+    //     });
+    // }, [search, tiles]);
+
+
+
+    // search logic (title)
     const filteredTiles = useMemo(() => {
         return tiles.filter((tile) => {
             const query = search.toLowerCase();
 
             return (
-                tile.title?.toLowerCase().includes(query) ||
-                tile.category?.toLowerCase().includes(query) ||
-                tile.style?.toLowerCase().includes(query) ||
-                tile.tags?.some((tag) =>
-                    tag.toLowerCase().includes(query)
-                )
+                tile.title?.toLowerCase().includes(query)
             );
         });
     }, [search, tiles]);
