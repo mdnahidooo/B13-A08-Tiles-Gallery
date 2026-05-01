@@ -1,7 +1,5 @@
 import TileCard from '@/components/TileCard';
 import getData from '@/lib/getData';
-import { Button } from '@heroui/react';
-import Link from 'next/link';
 import React from 'react';
 
 const AllTilesPage = async() => {
@@ -26,14 +24,6 @@ const AllTilesPage = async() => {
                     {tiles.map((tile) => (
                         <TileCard key={tile.id} tile={tile} />
                     ))}
-                </div>
-
-                <div>
-                    <Link href="/tiles">
-                        <Button className="bg-[#E07A5F] text-white px-6 py-3 hover:scale-105 transition-transform w-full sm:w-auto">
-                            Browse Collection
-                        </Button>
-                    </Link>
                 </div>
 
             </section>
