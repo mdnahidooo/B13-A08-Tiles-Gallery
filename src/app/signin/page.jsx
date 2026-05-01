@@ -14,6 +14,7 @@ import {
 import Link from "next/link";
 import { GrGoogle } from "react-icons/gr";
 import { RiResetRightFill } from "react-icons/ri";
+import { toast } from "react-toastify";
 
 export default function SignInPage() {
     const onSubmit = async (e) => {
@@ -28,7 +29,33 @@ export default function SignInPage() {
             callbackURL: "/",
         });
 
-        console.log({ data, error });
+        // console.log({ data, error });
+
+        if (!error) {
+            toast.success("Signed in successfully!", {
+                style: {
+                    background: "rgba(245, 245, 220, 0.65)", // transparent cream
+                    color: "#3D2B1F",
+                    border: "1px solid rgba(224, 122, 95, 0.4)",
+                    backdropFilter: "blur(10px)",
+                    WebkitBackdropFilter: "blur(10px)",
+                    borderRadius: "10px",
+                    boxShadow: "0 8px 30px rgba(0,0,0,0.08)",
+                },
+            });
+        } else {
+            toast.error("Invalid email or password!", {
+                style: {
+                    background: "rgba(245, 245, 220, 0.55)",
+                    color: "#3D2B1F",
+                    border: "1px solid rgba(224, 122, 95, 0.6)",
+                    backdropFilter: "blur(10px)",
+                    WebkitBackdropFilter: "blur(10px)",
+                    borderRadius: "10px",
+                    boxShadow: "0 8px 30px rgba(0,0,0,0.10)",
+                },
+            });
+        }
     };
 
     const handleGoogleSignIn = async () => {
@@ -96,7 +123,7 @@ export default function SignInPage() {
                             Submit
                         </Button>
 
-                        <Button type="reset" variant="secondary">
+                        <Button type="reset" variant="secondary" className="text-[#E07A5F]">
                             <RiResetRightFill></RiResetRightFill>
                             Reset
                         </Button>

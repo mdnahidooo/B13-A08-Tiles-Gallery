@@ -11,7 +11,9 @@ import {
     Label,
     TextField,
 } from "@heroui/react";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { GrGoogle } from "react-icons/gr";
 import { RiResetRightFill } from "react-icons/ri";
 import { toast } from "react-toastify";
 
@@ -57,7 +59,7 @@ export default function SignUpPage() {
             }, 30);
         }
         else {
-            toast.error("Account is already created", {
+            toast.error("Registration failed. Email may already exist", {
                 style: {
                     background: "rgba(255, 255, 255, 0.15)",
                     backdropFilter: "blur(14px)",
@@ -73,6 +75,12 @@ export default function SignUpPage() {
             });
         }
     };
+
+    const handleGoogleSignIn = async () => {
+        await authClient.signIn.social({
+            provider: 'google'
+        })
+    }
 
     return (
         <div className="flex items-center justify-center pb-20 pt-5 px-4">
@@ -145,14 +153,24 @@ export default function SignUpPage() {
                             Submit
                         </Button>
 
-                        <Button type="reset" variant="secondary">
+                        <Button type="reset" variant="secondary" className="text-[#E07A5F]">
                             <RiResetRightFill></RiResetRightFill>
                             Reset
                         </Button>
                     </div>
 
                 </Form>
-                
+                <p className="text-center">Or</p>
+
+                <Button onClick={handleGoogleSignIn} variant="outline" className={'w-full'}><GrGoogle /> Sign In With Google</Button>
+
+
+                <p className="mt-4 text-center">
+                    <span className="text-gray-400">Already have an account?{" "}</span>
+                    <Link href={"/signin"} className="text-[#E07A5F]">
+                        Login
+                    </Link>
+                </p>
             </Card>
         </div>
     );

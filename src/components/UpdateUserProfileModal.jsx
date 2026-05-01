@@ -45,10 +45,10 @@ const UpdateUserProfileModal = () => {
 
 
                                         <Modal.Footer>
-                                            <Button slot="close" variant="secondary">
+                                            <Button slot="close" variant="secondary" className="text-[#E07A5F]">
                                                 Cancel
                                             </Button>
-                                            <Button type="submit" slot="close">Save</Button>
+                                            <Button type="submit" slot="close" className="bg-[#E07A5F]">Save</Button>
                                         </Modal.Footer>
                                     </form>
                                 </Surface>
