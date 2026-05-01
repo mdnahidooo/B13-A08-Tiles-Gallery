@@ -21,7 +21,7 @@ export default function Navbar() {
     };
 
     return (
-        <nav className="bg-[#F5F5DC] border-b border-[#e5e5d8] relative z-50">
+        <nav className="bg-[#fbfbb8] border-b border-[#e5e5d8] relative z-50">
             <div className="max-w-8xl mx-auto px-4 py-4 flex items-center justify-between">
 
                 {/* LEFT */}
