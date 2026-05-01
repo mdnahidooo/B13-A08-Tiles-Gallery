@@ -127,25 +127,11 @@ The goal of this project is to create a visually engaging platform where users c
 
 ---
 
-## 📦 JSON Data Structure
+## 📌 Project Goal
 
-```json
-  {
-    "id": "tile_001",
-    "title": "Ceramic Blue Tile",
-    "description": "Premium ceramic tile with a smooth blue glaze finish.",
-    "style": "A calm, modern aesthetic inspired by ocean tones and minimalist interiors.",
-    "image": "https://plus.unsplash.com/premium_photo-1675747693497-0a1d0db0740c?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8dGlsZXxlbnwwfHwwfHx8MA%3D%3D",
-    "category": "ceramic",
-    "price": 45.99,
-    "currency": "USD",
-    "dimensions": "60x60 cm",
-    "material": "Ceramic",
-    "creator": "TileVerse Studio",
-    "tags": ["Minimalist", "Blue", "Modern", "Glossy"],
-    "inStock": true
-  }
+The goal of this **Tiles Gallery Website** is to provide a visually appealing platform where users can explore, search, and discover different types of tiles with ease. It focuses on delivering a smooth browsing experience, detailed product insights, and modern UI design to help users find their perfect aesthetic for interior or exterior design.
 
+---
 
 ## 📬 Submission
 
