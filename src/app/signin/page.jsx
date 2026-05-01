@@ -15,8 +15,12 @@ import Link from "next/link";
 import { GrGoogle } from "react-icons/gr";
 import { RiResetRightFill } from "react-icons/ri";
 import { toast } from "react-toastify";
+import { useState } from "react";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
+
 
 export default function SignInPage() {
+    const [isShowPassword, setIsShowPassword] = useState(false);
     const onSubmit = async (e) => {
         e.preventDefault();
 
@@ -72,7 +76,7 @@ export default function SignInPage() {
             <Card className="border border-[#e5e5d8] mx-auto w-125 py-10 mt-5 bg-[#F5F5DC] shadow-md">
                 <h1 className="text-center text-2xl font-bold">Sign In</h1>
 
-                <Form className="flex w-96 mx-auto flex-col gap-4" onSubmit={onSubmit}>
+                <Form className="flex mx-auto flex-col gap-4" onSubmit={onSubmit}>
                     <TextField
                         isRequired
                         name="email"
@@ -94,7 +98,8 @@ export default function SignInPage() {
                         isRequired
                         minLength={8}
                         name="password"
-                        type="password"
+                        type={isShowPassword ? "text" : "password"}
+                        className="relative"
                         validate={(value) => {
                             if (value.length < 8) {
                                 return "Password must be at least 8 characters";
@@ -109,6 +114,12 @@ export default function SignInPage() {
                             return null;
                         }}
                     >
+                        <span
+                            className="absolute right-3 top-1/2 -translate-y-1/2 cursor-pointer text-[#E07A5F] z-20"
+                            onClick={() => setIsShowPassword(!isShowPassword)}
+                        >
+                            {isShowPassword ? <FaEye /> : <FaEyeSlash />}
+                        </span>
                         <Label>Password</Label>
                         <Input placeholder="Enter your password" />
                         <Description>
@@ -130,7 +141,7 @@ export default function SignInPage() {
                     </div>
                 </Form>
 
-                <p className="text-center">Or</p>
+                <p className="text-center text-muted">Or</p>
 
                 <Button onClick={handleGoogleSignIn} variant="outline" className={'w-full'}><GrGoogle /> Sign In With Google</Button>
 

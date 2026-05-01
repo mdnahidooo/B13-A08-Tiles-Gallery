@@ -13,6 +13,8 @@ import {
 } from "@heroui/react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { useState } from "react";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { GrGoogle } from "react-icons/gr";
 import { RiResetRightFill } from "react-icons/ri";
 import { toast } from "react-toastify";
@@ -20,6 +22,7 @@ import { toast } from "react-toastify";
 export default function SignUpPage() {
 
     const router = useRouter()
+    const [isShowPassword, setIsShowPassword] = useState(false);
 
     const onSubmit = async (e) => {
         e.preventDefault();
@@ -91,7 +94,7 @@ export default function SignUpPage() {
                     Sign Up
                 </h1>
 
-                <Form className="flex w-96 mx-auto flex-col gap-4 mt-4" onSubmit={onSubmit}>
+                <Form className="flex mx-auto flex-col gap-4 mt-4" onSubmit={onSubmit}>
 
                     <TextField isRequired name="name" type="text">
                         <Label className="text-[#3D2B1F]">Name</Label>
@@ -125,7 +128,8 @@ export default function SignUpPage() {
                         isRequired
                         minLength={8}
                         name="password"
-                        type="password"
+                        type={isShowPassword ? "text" : "password"}
+                        className="relative"
                         validate={(value) => {
                             if (value.length < 8) {
                                 return "Password must be at least 8 characters";
@@ -139,6 +143,12 @@ export default function SignUpPage() {
                             return null;
                         }}
                     >
+                        <span
+                            className="absolute right-3 top-1/2 -translate-y-1/2 cursor-pointer text-[#E07A5F] z-20"
+                            onClick={() => setIsShowPassword(!isShowPassword)}
+                        >
+                            {isShowPassword ? <FaEye /> : <FaEyeSlash />}
+                        </span>
                         <Label className="text-[#3D2B1F]">Password</Label>
                         <Input placeholder="Enter your password" />
                         <Description className="text-[#6b5b52]">
@@ -160,7 +170,7 @@ export default function SignUpPage() {
                     </div>
 
                 </Form>
-                <p className="text-center">Or</p>
+                <p className="text-center text-muted">Or</p>
 
                 <Button onClick={handleGoogleSignIn} variant="outline" className={'w-full'}><GrGoogle /> Sign In With Google</Button>
 
