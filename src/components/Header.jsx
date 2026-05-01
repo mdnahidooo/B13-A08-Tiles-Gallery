@@ -51,7 +51,7 @@ const Header = () => {
                         {/* Buttons */}
                         <div className="flex gap-4 animate__animated animate__fadeInUp animate__delay-2s">
 
-                            <Link href="/all-tiles">
+                            <Link href="/tiles">
                                 <Button className="bg-[#E07A5F] text-white px-6 py-3 hover:scale-105 transition-transform">
                                     Browse Collection
                                 </Button>
