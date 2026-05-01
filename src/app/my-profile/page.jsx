@@ -6,7 +6,7 @@ import React from 'react';
 const MyProfilePage = () => {
     const { data: session } = authClient.useSession();
     const userInfo = session?.user;
-    console.log(userInfo);
+    
     return (
         <div>
             <Card className='max-w-96 mx-auto flex flex-col items-center my-10'>
