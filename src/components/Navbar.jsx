@@ -10,9 +10,11 @@ import { authClient } from "@/lib/auth-client";
 export default function Navbar() {
     const [open, setOpen] = useState(false);
 
-    
+
     const { data: session } = authClient.useSession();
+    const userInfo = session?.user;
     
+
 
     const handleSignOut = async () => {
         await authClient.signOut();
@@ -65,12 +67,19 @@ export default function Navbar() {
                         </>
                     ) : (
                         <>
-                            {/* PROFILE */}
+                            {/* profile avatar use */}
                             <Link href="/my-profile" className="flex items-center gap-2">
-                                <Button>Profile</Button>
+                                    <Avatar size="sm">
+                                        <Avatar.Image
+                                            alt={userInfo.name}
+                                            src={userInfo?.image}
+                                            referrerPolicy="no-referrer"
+                                        />
+                                        <Avatar.Fallback>{userInfo?.name.charAt(0)}</Avatar.Fallback>
+                                    </Avatar>
                             </Link>
 
-                            {/* LOGOUT */}
+                            {/* logout btn*/}
                             <Button
                                 onClick={handleSignOut}
                                 size="sm"
