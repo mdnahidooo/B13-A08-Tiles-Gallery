@@ -9,7 +9,7 @@ const AllTilesPage = () => {
     const [tiles, setTiles] = useState([]);
     const [loading, setLoading] = useState(true);
 
-    // ✅ useEffect instead of useState
+    // useEffect instead of useState
     useEffect(() => {
         const fetchTiles = async () => {
             try {

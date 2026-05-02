@@ -2,6 +2,35 @@ import getData from '@/lib/getData';
 import Image from 'next/image';
 import React from 'react';
 
+
+
+export async function generateMetadata({ params }) {
+    const res = await fetch(
+        "https://b13-a08-tiles-gallery.vercel.app/data.json",
+        { cache: "no-store" }
+    );
+
+    const tiles = await res.json();
+
+    const { id } = await params; 
+
+    const tile = tiles.find((tile) => tile.id === id);
+
+    if (!tile) {
+        return {
+            title: "Tile Not Found - Tiles Gallery",
+            description: "The tile you are looking for does not exist.",
+        };
+    }
+
+    return {
+        title: `${tile.title} | Tiles Gallery`,
+        description: tile.description,
+        keywords: tile.tags?.join(", "),
+    };
+}
+
+
 const TileDetailsPage = async ({ params }) => {
     const { id } = await params;
     const tiles = await getData();
